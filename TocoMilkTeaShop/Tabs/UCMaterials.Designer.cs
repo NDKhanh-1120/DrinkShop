@@ -31,6 +31,9 @@ namespace TocoMilkTeaShop.Tabs
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv = new System.Windows.Forms.DataGridView();
+            this.MaterialID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaterialName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tbMaterialName = new System.Windows.Forms.TextBox();
@@ -41,9 +44,6 @@ namespace TocoMilkTeaShop.Tabs
             this.btAdd = new System.Windows.Forms.Button();
             this.btUpdate = new System.Windows.Forms.Button();
             this.btDelete = new System.Windows.Forms.Button();
-            this.MaterialID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaterialName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,6 +68,27 @@ namespace TocoMilkTeaShop.Tabs
             this.dgv.Size = new System.Drawing.Size(1145, 444);
             this.dgv.TabIndex = 0;
             this.dgv.SelectionChanged += new System.EventHandler(this.dgv_SelectionChanged);
+            // 
+            // MaterialID
+            // 
+            this.MaterialID.DataPropertyName = "MaterialID";
+            this.MaterialID.HeaderText = "Mã nguyên liệu";
+            this.MaterialID.Name = "MaterialID";
+            this.MaterialID.Width = 300;
+            // 
+            // MaterialName
+            // 
+            this.MaterialName.DataPropertyName = "MaterialName";
+            this.MaterialName.HeaderText = "Tên nguyên liệu";
+            this.MaterialName.Name = "MaterialName";
+            this.MaterialName.Width = 500;
+            // 
+            // Unit
+            // 
+            this.Unit.DataPropertyName = "Unit";
+            this.Unit.HeaderText = "Đơn vị tính";
+            this.Unit.Name = "Unit";
+            this.Unit.Width = 300;
             // 
             // label2
             // 
@@ -137,57 +158,39 @@ namespace TocoMilkTeaShop.Tabs
             // 
             // btAdd
             // 
+            this.btAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btAdd.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btAdd.Location = new System.Drawing.Point(730, 501);
             this.btAdd.Name = "btAdd";
             this.btAdd.Size = new System.Drawing.Size(139, 49);
             this.btAdd.TabIndex = 40;
             this.btAdd.Text = "Thêm";
-            this.btAdd.UseVisualStyleBackColor = true;
+            this.btAdd.UseVisualStyleBackColor = false;
             this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
             // btUpdate
             // 
+            this.btUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btUpdate.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btUpdate.Location = new System.Drawing.Point(730, 556);
             this.btUpdate.Name = "btUpdate";
             this.btUpdate.Size = new System.Drawing.Size(139, 49);
             this.btUpdate.TabIndex = 40;
             this.btUpdate.Text = "Lưu";
-            this.btUpdate.UseVisualStyleBackColor = true;
+            this.btUpdate.UseVisualStyleBackColor = false;
             this.btUpdate.Click += new System.EventHandler(this.btUpdate_Click);
             // 
             // btDelete
             // 
+            this.btDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btDelete.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btDelete.Location = new System.Drawing.Point(899, 531);
             this.btDelete.Name = "btDelete";
             this.btDelete.Size = new System.Drawing.Size(139, 49);
             this.btDelete.TabIndex = 40;
             this.btDelete.Text = "Xóa ";
-            this.btDelete.UseVisualStyleBackColor = true;
+            this.btDelete.UseVisualStyleBackColor = false;
             this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
-            // 
-            // MaterialID
-            // 
-            this.MaterialID.DataPropertyName = "MaterialID";
-            this.MaterialID.HeaderText = "Mã nguyên liệu";
-            this.MaterialID.Name = "MaterialID";
-            this.MaterialID.Width = 300;
-            // 
-            // MaterialName
-            // 
-            this.MaterialName.DataPropertyName = "MaterialName";
-            this.MaterialName.HeaderText = "Tên nguyên liệu";
-            this.MaterialName.Name = "MaterialName";
-            this.MaterialName.Width = 500;
-            // 
-            // Unit
-            // 
-            this.Unit.DataPropertyName = "Unit";
-            this.Unit.HeaderText = "Đơn vị tính";
-            this.Unit.Name = "Unit";
-            this.Unit.Width = 300;
             // 
             // UCMaterials
             // 

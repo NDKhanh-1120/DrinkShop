@@ -48,6 +48,13 @@ namespace TocoMilkTeaShop.Forms
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DeleteThis = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.tbMaterialName = new System.Windows.Forms.TextBox();
+            this.tbQuatity = new System.Windows.Forms.TextBox();
+            this.tbPrice = new System.Windows.Forms.TextBox();
+            this.btAdd = new System.Windows.Forms.Button();
+            this.btCloseTB = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbbMaterialName = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +62,7 @@ namespace TocoMilkTeaShop.Forms
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(63, 19);
+            this.label1.Location = new System.Drawing.Point(63, 53);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(112, 21);
@@ -66,19 +73,18 @@ namespace TocoMilkTeaShop.Forms
             // 
             this.lbImportBillID.AutoSize = true;
             this.lbImportBillID.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbImportBillID.Location = new System.Drawing.Point(178, 21);
+            this.lbImportBillID.Location = new System.Drawing.Point(178, 55);
             this.lbImportBillID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbImportBillID.Name = "lbImportBillID";
-            this.lbImportBillID.Size = new System.Drawing.Size(45, 19);
+            this.lbImportBillID.Size = new System.Drawing.Size(18, 19);
             this.lbImportBillID.TabIndex = 0;
-            this.lbImportBillID.Text = "label1";
-            this.lbImportBillID.Click += new System.EventHandler(this.lbImportBillID_Click);
+            this.lbImportBillID.Text = "...";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(396, 19);
+            this.label3.Location = new System.Drawing.Point(564, 78);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 21);
@@ -89,19 +95,18 @@ namespace TocoMilkTeaShop.Forms
             // 
             this.lbTime.AutoSize = true;
             this.lbTime.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTime.Location = new System.Drawing.Point(491, 21);
+            this.lbTime.Location = new System.Drawing.Point(659, 80);
             this.lbTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTime.Name = "lbTime";
-            this.lbTime.Size = new System.Drawing.Size(45, 19);
+            this.lbTime.Size = new System.Drawing.Size(18, 19);
             this.lbTime.TabIndex = 0;
-            this.lbTime.Text = "label1";
-            this.lbTime.Click += new System.EventHandler(this.lbTime_Click);
+            this.lbTime.Text = "...";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(63, 55);
+            this.label5.Location = new System.Drawing.Point(63, 79);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(109, 21);
@@ -112,19 +117,18 @@ namespace TocoMilkTeaShop.Forms
             // 
             this.lbCompanyName.AutoSize = true;
             this.lbCompanyName.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCompanyName.Location = new System.Drawing.Point(178, 57);
+            this.lbCompanyName.Location = new System.Drawing.Point(178, 81);
             this.lbCompanyName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbCompanyName.Name = "lbCompanyName";
-            this.lbCompanyName.Size = new System.Drawing.Size(45, 19);
+            this.lbCompanyName.Size = new System.Drawing.Size(18, 19);
             this.lbCompanyName.TabIndex = 0;
-            this.lbCompanyName.Text = "label1";
-            this.lbCompanyName.Click += new System.EventHandler(this.lbCompanyName_Click);
+            this.lbCompanyName.Text = "...";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(63, 89);
+            this.label7.Location = new System.Drawing.Point(63, 105);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(132, 21);
@@ -135,19 +139,18 @@ namespace TocoMilkTeaShop.Forms
             // 
             this.lbShipperName.AutoSize = true;
             this.lbShipperName.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbShipperName.Location = new System.Drawing.Point(203, 91);
+            this.lbShipperName.Location = new System.Drawing.Point(203, 107);
             this.lbShipperName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbShipperName.Name = "lbShipperName";
-            this.lbShipperName.Size = new System.Drawing.Size(45, 19);
+            this.lbShipperName.Size = new System.Drawing.Size(18, 19);
             this.lbShipperName.TabIndex = 0;
-            this.lbShipperName.Text = "label1";
-            this.lbShipperName.Click += new System.EventHandler(this.lbShipperName_Click);
+            this.lbShipperName.Text = "...";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(675, 21);
+            this.label9.Location = new System.Drawing.Point(567, 105);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(78, 21);
@@ -158,23 +161,22 @@ namespace TocoMilkTeaShop.Forms
             // 
             this.lbNote.AutoSize = true;
             this.lbNote.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNote.Location = new System.Drawing.Point(750, 23);
+            this.lbNote.Location = new System.Drawing.Point(660, 107);
             this.lbNote.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbNote.Name = "lbNote";
-            this.lbNote.Size = new System.Drawing.Size(45, 19);
+            this.lbNote.Size = new System.Drawing.Size(18, 19);
             this.lbNote.TabIndex = 0;
-            this.lbNote.Text = "label1";
-            this.lbNote.Click += new System.EventHandler(this.lbNote_Click);
+            this.lbNote.Text = "...";
             // 
             // dgv
             // 
             this.dgv.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.InfoText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -184,21 +186,22 @@ namespace TocoMilkTeaShop.Forms
             this.Price,
             this.Total,
             this.DeleteThis});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv.Location = new System.Drawing.Point(55, 123);
-            this.dgv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgv.Location = new System.Drawing.Point(53, 174);
+            this.dgv.Margin = new System.Windows.Forms.Padding(4);
             this.dgv.Name = "dgv";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv.RowHeadersVisible = false;
             this.dgv.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgv.Size = new System.Drawing.Size(875, 403);
             this.dgv.TabIndex = 1;
+            this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
             // 
             // MaterialName
             // 
@@ -233,12 +236,82 @@ namespace TocoMilkTeaShop.Forms
             this.DeleteThis.Name = "DeleteThis";
             this.DeleteThis.Width = 50;
             // 
+            // tbMaterialName
+            // 
+            this.tbMaterialName.Location = new System.Drawing.Point(0, 1);
+            this.tbMaterialName.Name = "tbMaterialName";
+            this.tbMaterialName.Size = new System.Drawing.Size(28, 24);
+            this.tbMaterialName.TabIndex = 2;
+            // 
+            // tbQuatity
+            // 
+            this.tbQuatity.Location = new System.Drawing.Point(423, 143);
+            this.tbQuatity.Name = "tbQuatity";
+            this.tbQuatity.Size = new System.Drawing.Size(95, 24);
+            this.tbQuatity.TabIndex = 2;
+            // 
+            // tbPrice
+            // 
+            this.tbPrice.Location = new System.Drawing.Point(524, 143);
+            this.tbPrice.Name = "tbPrice";
+            this.tbPrice.Size = new System.Drawing.Size(146, 24);
+            this.tbPrice.TabIndex = 2;
+            // 
+            // btAdd
+            // 
+            this.btAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btAdd.Location = new System.Drawing.Point(898, 136);
+            this.btAdd.Name = "btAdd";
+            this.btAdd.Size = new System.Drawing.Size(31, 33);
+            this.btAdd.TabIndex = 3;
+            this.btAdd.Text = "+";
+            this.btAdd.UseVisualStyleBackColor = false;
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
+            // 
+            // btCloseTB
+            // 
+            this.btCloseTB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btCloseTB.Location = new System.Drawing.Point(937, 137);
+            this.btCloseTB.Name = "btCloseTB";
+            this.btCloseTB.Size = new System.Drawing.Size(31, 32);
+            this.btCloseTB.TabIndex = 3;
+            this.btCloseTB.Text = "x";
+            this.btCloseTB.UseVisualStyleBackColor = false;
+            this.btCloseTB.Click += new System.EventHandler(this.btCloseTB_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(347, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(288, 28);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "CHI TIẾT HÓA ĐƠN NHẬP";
+            // 
+            // cbbMaterialName
+            // 
+            this.cbbMaterialName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbbMaterialName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbbMaterialName.FormattingEnabled = true;
+            this.cbbMaterialName.Location = new System.Drawing.Point(54, 143);
+            this.cbbMaterialName.Name = "cbbMaterialName";
+            this.cbbMaterialName.Size = new System.Drawing.Size(363, 27);
+            this.cbbMaterialName.TabIndex = 5;
+            // 
             // ImportDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(978, 553);
+            this.ClientSize = new System.Drawing.Size(978, 593);
+            this.Controls.Add(this.cbbMaterialName);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btCloseTB);
+            this.Controls.Add(this.btAdd);
+            this.Controls.Add(this.tbPrice);
+            this.Controls.Add(this.tbQuatity);
+            this.Controls.Add(this.tbMaterialName);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.lbNote);
             this.Controls.Add(this.lbShipperName);
@@ -252,9 +325,10 @@ namespace TocoMilkTeaShop.Forms
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ImportDetail";
             this.Text = "Chi tiết đơn hàng";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ImportDetail_FormClosing);
             this.Load += new System.EventHandler(this.ImportDetail_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
@@ -280,5 +354,12 @@ namespace TocoMilkTeaShop.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
         private System.Windows.Forms.DataGridViewButtonColumn DeleteThis;
+        private System.Windows.Forms.TextBox tbMaterialName;
+        private System.Windows.Forms.TextBox tbQuatity;
+        private System.Windows.Forms.TextBox tbPrice;
+        private System.Windows.Forms.Button btAdd;
+        private System.Windows.Forms.Button btCloseTB;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbbMaterialName;
     }
 }

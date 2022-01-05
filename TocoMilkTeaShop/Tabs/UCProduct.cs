@@ -88,7 +88,6 @@ namespace TocoMilkTeaShop.Tabs
                     //copy anh vao duong dan chua anh
                     File.Copy(openFileDialog.FileName, fileSavePath, true);
                 }
-
             }
         }
 
@@ -98,7 +97,8 @@ namespace TocoMilkTeaShop.Tabs
             selectedProduct = db.Menus.FirstOrDefault(p=>p.ProductID == iD); 
             tbProductName.Text = dgv.CurrentRow.Cells["ProductName"].Value.ToString();
             tbPrice.Text = dgv.CurrentRow.Cells["Price"].Value.ToString();
-            //pictureBox.Image = dgv.CurrentRow.Cells["ProductImage"].Value.
+            //pictureBox.Image = Image.FromFile(dgv.CurrentRow.Cells["ProductImage"].Value.ToString());
+                //dgv.CurrentRow.Cells["ProductImage"].Value.
         }
 
         private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)

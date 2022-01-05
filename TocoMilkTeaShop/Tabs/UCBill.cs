@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Core.Objects;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -28,6 +29,7 @@ namespace TocoMilkTeaShop.Tabs
         private void btDisplayAllBills_Click(object sender, EventArgs e)
         {
             DisplayBills();
+            CalculateRevenue();
         }
         private void dtp_ValueChanged(object sender, EventArgs e)
         {
@@ -46,11 +48,13 @@ namespace TocoMilkTeaShop.Tabs
         }
         private void DisplayBills()
         {
+            lbStatistical.Text = "Tất cả";
             dgv.DataSource =
             (from b in db.Bills
              join o in db.Orders on b.BillID equals o.BillID
              join p in db.Menus on o.ProductID equals p.ProductID
              group new { b, o, p } by new { b.BillID, b.Time} into bop
+             orderby bop.Key.Time descending
              select new
              {
                  BillID = bop.Key.BillID,
@@ -65,7 +69,7 @@ namespace TocoMilkTeaShop.Tabs
              join o in db.Orders on b.BillID equals o.BillID
              join p in db.Menus on o.ProductID equals p.ProductID
              group new { b, o, p } by new { b.BillID, b.Time} into bop
-             where System.Data.Entity.Core.Objects.EntityFunctions.TruncateTime(bop.Key.Time) == datetime.Date
+             where EntityFunctions.TruncateTime(bop.Key.Time) == datetime.Date
              select new
              {
                  BillID = bop.Key.BillID,
@@ -73,7 +77,7 @@ namespace TocoMilkTeaShop.Tabs
                  Total = bop.Sum(q=>q.o.Quatity * q.p.Price)  
              }).ToList();
 
-            lbStatistical.Text = "Thống kê - ngày " + datetime.Day + " / " + datetime.Month ;
+            lbStatistical.Text = "Thống kê - ngày " + datetime.Day + " / " + datetime.Month +"/ " + datetime.Year ;
         }
         private void DisplayBillsByMouth(DateTime datetime)
         {
@@ -86,9 +90,10 @@ namespace TocoMilkTeaShop.Tabs
              select new
              {
                  BillID = bop.Key.BillID,
-                 Time = bop.Key.Time,
+                 Time =  bop.Key.Time,
                  Total = bop.Sum(q => q.o.Quatity * q.p.Price)
              }).ToList();
+          
             lbStatistical.Text = "Thống kê - tháng " + datetime.Month + " / " + datetime.Year;
         }
         private void CalculateRevenue()
@@ -98,9 +103,34 @@ namespace TocoMilkTeaShop.Tabs
             {
                 sum += Convert.ToInt32(row.Cells["Total"].Value.ToString());
             }
-            CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
-            lblTotal.Text = double.Parse(sum.ToString()).ToString("#,###", cul.NumberFormat) + " VNĐ";
+            lblTotal.Text = double.Parse(sum.ToString())
+                .ToString("#,###", CultureInfo.GetCultureInfo("vi-VN").NumberFormat) + " VNĐ";
         }
 
+        private void btDisplayToday_Click(object sender, EventArgs e)
+        {
+            dtp.Value = DateTime.Today;
+            DisplayBillsByDay(dtp.Value);
+        }
+
+        private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+                var senderGrid = (DataGridView)sender;
+            //Xoa
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                e.RowIndex >= 0)
+            {
+                int billID = Convert.ToInt32(senderGrid.Rows[e.RowIndex].Cells["BillID"].Value);
+                var selectedBill = db.Bills.FirstOrDefault(o => o.BillID == billID);
+                DialogResult dR = MessageBox.Show("Hóa đơn này sẽ bị xóa khỏi hóa đơn ?", "Xóa", MessageBoxButtons.YesNo);
+                if (dR == DialogResult.Yes)
+                {
+                    db.Bills.Remove(selectedBill);
+                    db.SaveChanges();
+                    DisplayBillsByDay(dtp.Value);
+                }
+            }
+
+        }
     }
 }

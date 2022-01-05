@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace TocoMilkTeaShop.Forms
     {
         DB db = new DB();
         int importBillID;
+        ImportDetailBill selectImportDetail;
         public ImportDetail()
         {
             InitializeComponent();
@@ -34,6 +36,17 @@ namespace TocoMilkTeaShop.Forms
         private void ImportDetail_Load(object sender, EventArgs e)
         {
             DisplayImportDetailBill();
+            InitComboboxMaterialName();
+            VisibleTextbox(false);
+        }
+
+        private void InitComboboxMaterialName()
+        {
+            db.Materials.Load();
+            cbbMaterialName.DataSource = db.Materials.Local;
+            cbbMaterialName.DisplayMember = "MaterialName";
+            cbbMaterialName.ValueMember = "MaterialName";
+
         }
 
         private void DisplayImportDetailBill()
@@ -51,29 +64,71 @@ namespace TocoMilkTeaShop.Forms
                  }).ToList();
         }
 
-        private void lbImportBillID_Click(object sender, EventArgs e)
+        private void btAdd_Click(object sender, EventArgs e)
         {
-
+            if (cbbMaterialName.Visible == false) VisibleTextbox(true);
+            else
+            {
+                int matID = db.Materials.FirstOrDefault(mat => mat.MaterialName == cbbMaterialName.Text).MaterialID;
+                if(matID == null)
+                {
+                    MessageBox.Show("Tên nguyên liệu không tồn tại ! Bạn cần thêm vào danh sách nguyên liệu ?", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                    return;
+                }
+                //
+                ImportDetailBill imDB = new ImportDetailBill()
+                {
+                    ImportID = Convert.ToInt32(lbImportBillID.Text),
+                    MaterialID = matID,
+                    Quatity = Convert.ToInt32(tbQuatity.Text),
+                    Price = Convert.ToInt32(tbPrice.Text)
+                };
+                db.ImportDetailBills.Add(imDB);
+                db.SaveChanges();
+                DisplayImportDetailBill();
+            }
         }
 
-        private void lbCompanyName_Click(object sender, EventArgs e)
+        private void VisibleTextbox(bool isvisible)
         {
-
+            cbbMaterialName.Visible = isvisible;
+            tbPrice.Visible = isvisible;
+            tbQuatity.Visible = isvisible;
         }
 
-        private void lbShipperName_Click(object sender, EventArgs e)
+        private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            var senderGrid = (DataGridView)sender;
+            int importBillID = Convert.ToInt32(lbImportBillID.Text);
+            var matName = senderGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
+            int matID = db.Materials.FirstOrDefault(p => p.MaterialName == matName).MaterialID;
+            selectImportDetail = db.ImportDetailBills.FirstOrDefault(imdb => imdb.ImportID == importBillID && imdb.MaterialID == matID);
+            //Xoa
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                e.RowIndex >= 0)
+            {
+                DialogResult dR = MessageBox.Show("Sản phẩm này sẽ bị xóa khỏi hóa đơn nhập ?", "Xóa", MessageBoxButtons.YesNo);
+                if (dR == DialogResult.Yes)
+                {
+                    db.ImportDetailBills.Remove(selectImportDetail);
+                    db.SaveChanges();
+                    DisplayImportDetailBill();
+                }
+            }
         }
 
-        private void lbTime_Click(object sender, EventArgs e)
+        private void btCloseTB_Click(object sender, EventArgs e)
         {
-
+            VisibleTextbox(false);
         }
 
-        private void lbNote_Click(object sender, EventArgs e)
+        private void ImportDetail_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            if(dgv.RowCount == 0)
+            {
+                int imID = Convert.ToInt32(lbImportBillID.Text);
+                db.ImportBills.Remove(db.ImportBills.FirstOrDefault(im => im.ImportID == imID));
+            }
         }
     }
 }

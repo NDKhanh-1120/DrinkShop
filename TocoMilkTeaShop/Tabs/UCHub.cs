@@ -15,6 +15,7 @@ namespace TocoMilkTeaShop.Tabs
     public partial class UCHub : UserControl
     {
         DB db = new DB();
+        int selectedIndex;
         public UCHub()
         {
             InitializeComponent();
@@ -23,6 +24,7 @@ namespace TocoMilkTeaShop.Tabs
         {
             dtp.Value = DateTime.Now.Date;
             DisplayInventoryInDate(dtp.Value);
+            dgv.ReadOnly = false;
         }
         private void dtp_ValueChanged(object sender, EventArgs e)
         {
@@ -78,17 +80,54 @@ namespace TocoMilkTeaShop.Tabs
         }
         private void DisplayInventoryInDate(DateTime dateTimeValue)
         {
-              dgv.DataSource =
+              var list =
              (from hm in db.HubMaterials
               join hd in db.HubDetails on hm.HubMaterialID equals hd.HubMaterialID
               join mat in db.Materials on hd.MaterialID equals mat.MaterialID
-              where System.Data.Entity.Core.Objects.EntityFunctions.TruncateTime(hm.Times) == dtp.Value.Date
+              where EntityFunctions.TruncateTime(hm.Times) == dtp.Value.Date
               select new
               {
                   MaterialID = hd.MaterialID,
                   MaterialName = mat.MaterialName,
                   Quatity = hd.Quatity
               }).ToList();
+            dgv.DataSource = list;
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgv_SelectionChanged(object sender, EventArgs e)
+        {
+             selectedIndex = Convert.ToInt32( dgv.CurrentRow.Cells["MaterialID"].Value);
+        }
+
+        private void btSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgv_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void dgv_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+
+        }
+
+        private void dgv_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dgv.CurrentCell.ReadOnly = false;
         }
     }
 }

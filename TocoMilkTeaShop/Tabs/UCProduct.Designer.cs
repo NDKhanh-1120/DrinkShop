@@ -34,11 +34,6 @@ namespace TocoMilkTeaShop.Tabs
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.ProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Productname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductImage = new System.Windows.Forms.DataGridViewImageColumn();
-            this.DeleteThis = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -50,6 +45,11 @@ namespace TocoMilkTeaShop.Tabs
             this.btnChooseImage = new System.Windows.Forms.Button();
             this.lbImagePath = new System.Windows.Forms.Label();
             this.menuBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Productname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductImage = new System.Windows.Forms.DataGridViewImageColumn();
+            this.DeleteThis = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.menuBindingSource)).BeginInit();
@@ -58,6 +58,7 @@ namespace TocoMilkTeaShop.Tabs
             // dgv
             // 
             this.dgv.AllowUserToResizeRows = false;
+            this.dgv.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dgv.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -74,7 +75,7 @@ namespace TocoMilkTeaShop.Tabs
             this.Price,
             this.ProductImage,
             this.DeleteThis});
-            this.dgv.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dgv.Cursor = System.Windows.Forms.Cursors.Default;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -83,66 +84,25 @@ namespace TocoMilkTeaShop.Tabs
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgv.Location = new System.Drawing.Point(161, 141);
+            this.dgv.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.dgv.Location = new System.Drawing.Point(135, 106);
+            this.dgv.MultiSelect = false;
             this.dgv.Name = "dgv";
+            this.dgv.RowHeadersVisible = false;
             this.dgv.RowTemplate.Height = 50;
             this.dgv.RowTemplate.ReadOnly = true;
-            this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(1093, 491);
+            this.dgv.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgv.Size = new System.Drawing.Size(1093, 526);
             this.dgv.TabIndex = 0;
             this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
             this.dgv.SelectionChanged += new System.EventHandler(this.dgv_SelectionChanged);
-            // 
-            // ProductID
-            // 
-            this.ProductID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ProductID.DataPropertyName = "ProductID";
-            this.ProductID.Frozen = true;
-            this.ProductID.HeaderText = "Mã sản phẩm";
-            this.ProductID.Name = "ProductID";
-            // 
-            // Productname
-            // 
-            this.Productname.DataPropertyName = "ProductName";
-            this.Productname.Frozen = true;
-            this.Productname.HeaderText = "Tên sản phẩm";
-            this.Productname.Name = "Productname";
-            this.Productname.Width = 700;
-            // 
-            // Price
-            // 
-            this.Price.DataPropertyName = "Price";
-            this.Price.Frozen = true;
-            this.Price.HeaderText = "Đơn giá";
-            this.Price.Name = "Price";
-            // 
-            // ProductImage
-            // 
-            this.ProductImage.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ProductImage.DataPropertyName = "ProductImage";
-            this.ProductImage.HeaderText = "Ảnh";
-            this.ProductImage.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.ProductImage.MinimumWidth = 100;
-            this.ProductImage.Name = "ProductImage";
-            this.ProductImage.ReadOnly = true;
-            // 
-            // DeleteThis
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Red;
-            this.DeleteThis.DefaultCellStyle = dataGridViewCellStyle2;
-            this.DeleteThis.HeaderText = "Xóa";
-            this.DeleteThis.Name = "DeleteThis";
-            this.DeleteThis.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.DeleteThis.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.DeleteThis.Width = 50;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(175, 37);
+            this.label1.Location = new System.Drawing.Point(274, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(127, 21);
             this.label1.TabIndex = 1;
@@ -152,7 +112,7 @@ namespace TocoMilkTeaShop.Tabs
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(175, 77);
+            this.label2.Location = new System.Drawing.Point(667, 42);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 21);
             this.label2.TabIndex = 2;
@@ -162,7 +122,7 @@ namespace TocoMilkTeaShop.Tabs
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(749, 32);
+            this.label4.Location = new System.Drawing.Point(888, 45);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 21);
             this.label4.TabIndex = 4;
@@ -172,7 +132,7 @@ namespace TocoMilkTeaShop.Tabs
             // 
             this.tbProductName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbProductName.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbProductName.Location = new System.Drawing.Point(309, 32);
+            this.tbProductName.Location = new System.Drawing.Point(278, 71);
             this.tbProductName.Name = "tbProductName";
             this.tbProductName.Size = new System.Drawing.Size(366, 29);
             this.tbProductName.TabIndex = 5;
@@ -180,27 +140,27 @@ namespace TocoMilkTeaShop.Tabs
             // tbPrice
             // 
             this.tbPrice.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPrice.Location = new System.Drawing.Point(309, 76);
+            this.tbPrice.Location = new System.Drawing.Point(671, 71);
             this.tbPrice.Name = "tbPrice";
-            this.tbPrice.Size = new System.Drawing.Size(366, 29);
+            this.tbPrice.Size = new System.Drawing.Size(204, 29);
             this.tbPrice.TabIndex = 6;
             // 
             // pictureBox
             // 
-            this.pictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.pictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox.Location = new System.Drawing.Point(807, 5);
+            this.pictureBox.Location = new System.Drawing.Point(935, 32);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(114, 110);
+            this.pictureBox.Size = new System.Drawing.Size(74, 68);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox.TabIndex = 8;
             this.pictureBox.TabStop = false;
             // 
             // btAdd
             // 
-            this.btAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btAdd.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAdd.Location = new System.Drawing.Point(968, 32);
+            this.btAdd.Location = new System.Drawing.Point(1129, 16);
             this.btAdd.Name = "btAdd";
             this.btAdd.Size = new System.Drawing.Size(75, 36);
             this.btAdd.TabIndex = 9;
@@ -210,9 +170,9 @@ namespace TocoMilkTeaShop.Tabs
             // 
             // btUpdate
             // 
-            this.btUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btUpdate.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btUpdate.Location = new System.Drawing.Point(968, 75);
+            this.btUpdate.Location = new System.Drawing.Point(1129, 53);
             this.btUpdate.Name = "btUpdate";
             this.btUpdate.Size = new System.Drawing.Size(75, 36);
             this.btUpdate.TabIndex = 10;
@@ -222,9 +182,9 @@ namespace TocoMilkTeaShop.Tabs
             // 
             // btnChooseImage
             // 
-            this.btnChooseImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnChooseImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnChooseImage.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChooseImage.Location = new System.Drawing.Point(737, 89);
+            this.btnChooseImage.Location = new System.Drawing.Point(1029, 40);
             this.btnChooseImage.Name = "btnChooseImage";
             this.btnChooseImage.Size = new System.Drawing.Size(64, 26);
             this.btnChooseImage.TabIndex = 11;
@@ -235,7 +195,7 @@ namespace TocoMilkTeaShop.Tabs
             // lbImagePath
             // 
             this.lbImagePath.AutoSize = true;
-            this.lbImagePath.Location = new System.Drawing.Point(817, 122);
+            this.lbImagePath.Location = new System.Drawing.Point(1027, 76);
             this.lbImagePath.Name = "lbImagePath";
             this.lbImagePath.Size = new System.Drawing.Size(66, 13);
             this.lbImagePath.TabIndex = 12;
@@ -244,6 +204,57 @@ namespace TocoMilkTeaShop.Tabs
             // menuBindingSource
             // 
             this.menuBindingSource.DataSource = typeof(TocoMilkTeaShop.Models.Menu);
+            // 
+            // ProductID
+            // 
+            this.ProductID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ProductID.DataPropertyName = "ProductID";
+            this.ProductID.Frozen = true;
+            this.ProductID.HeaderText = "Mã sản phẩm";
+            this.ProductID.Name = "ProductID";
+            this.ProductID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Productname
+            // 
+            this.Productname.DataPropertyName = "ProductName";
+            this.Productname.Frozen = true;
+            this.Productname.HeaderText = "Tên sản phẩm";
+            this.Productname.Name = "Productname";
+            this.Productname.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Productname.Width = 600;
+            // 
+            // Price
+            // 
+            this.Price.DataPropertyName = "Price";
+            this.Price.Frozen = true;
+            this.Price.HeaderText = "Đơn giá";
+            this.Price.Name = "Price";
+            this.Price.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Price.Width = 240;
+            // 
+            // ProductImage
+            // 
+            this.ProductImage.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ProductImage.DataPropertyName = "ProductImage";
+            this.ProductImage.HeaderText = "Ảnh";
+            this.ProductImage.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.ProductImage.MinimumWidth = 80;
+            this.ProductImage.Name = "ProductImage";
+            this.ProductImage.ReadOnly = true;
+            this.ProductImage.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ProductImage.Width = 80;
+            // 
+            // DeleteThis
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Red;
+            this.DeleteThis.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DeleteThis.HeaderText = "Xóa";
+            this.DeleteThis.Name = "DeleteThis";
+            this.DeleteThis.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.DeleteThis.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.DeleteThis.Width = 50;
             // 
             // UCProduct
             // 

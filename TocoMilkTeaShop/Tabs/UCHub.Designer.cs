@@ -29,8 +29,8 @@ namespace TocoMilkTeaShop.Tabs
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.MaterialID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaterialName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,33 +39,40 @@ namespace TocoMilkTeaShop.Tabs
             this.dtp = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.btRemoveInDate = new System.Windows.Forms.Button();
+            this.btSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv
             // 
+            this.dgv.AllowDrop = true;
             this.dgv.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaterialID,
             this.MaterialName,
             this.Quatity});
-            this.dgv.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgv.Location = new System.Drawing.Point(347, 59);
+            this.dgv.MultiSelect = false;
             this.dgv.Name = "dgv";
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.dgv.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgv.Size = new System.Drawing.Size(893, 549);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.dgv.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv.Size = new System.Drawing.Size(893, 522);
+            this.dgv.StandardTab = true;
             this.dgv.TabIndex = 0;
+            this.dgv.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgv_CellBeginEdit);
+            this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
+            this.dgv.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellEndEdit);
+            this.dgv.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellValueChanged);
+            this.dgv.SelectionChanged += new System.EventHandler(this.dgv_SelectionChanged);
             // 
             // MaterialID
             // 
@@ -138,6 +145,20 @@ namespace TocoMilkTeaShop.Tabs
             this.btRemoveInDate.UseVisualStyleBackColor = false;
             this.btRemoveInDate.Click += new System.EventHandler(this.btRemoveInDate_Click);
             // 
+            // btSave
+            // 
+            this.btSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btSave.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btSave.FlatAppearance.BorderSize = 0;
+            this.btSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSave.Location = new System.Drawing.Point(93, 463);
+            this.btSave.Name = "btSave";
+            this.btSave.Size = new System.Drawing.Size(143, 56);
+            this.btSave.TabIndex = 1;
+            this.btSave.Text = "Lưu";
+            this.btSave.UseVisualStyleBackColor = false;
+            this.btSave.Click += new System.EventHandler(this.btSave_Click);
+            // 
             // UCHub
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -145,6 +166,7 @@ namespace TocoMilkTeaShop.Tabs
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtp);
+            this.Controls.Add(this.btSave);
             this.Controls.Add(this.btRemoveInDate);
             this.Controls.Add(this.btCreateInventoryToday);
             this.Controls.Add(this.dgv);
@@ -167,5 +189,6 @@ namespace TocoMilkTeaShop.Tabs
         private System.Windows.Forms.DataGridViewTextBoxColumn MaterialName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quatity;
         private System.Windows.Forms.Button btRemoveInDate;
+        private System.Windows.Forms.Button btSave;
     }
 }

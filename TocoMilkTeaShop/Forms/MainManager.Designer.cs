@@ -42,12 +42,12 @@ namespace TocoMilkTeaShop
             this.btImportBill = new System.Windows.Forms.Button();
             this.btnEmployee = new System.Windows.Forms.Button();
             this.btHub = new System.Windows.Forms.Button();
+            this.btmaterials = new System.Windows.Forms.Button();
             this.btBill = new System.Windows.Forms.Button();
             this.btnProduct = new System.Windows.Forms.Button();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.panelFooter = new System.Windows.Forms.Panel();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.btmaterials = new System.Windows.Forms.Button();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelMenu.SuspendLayout();
@@ -127,7 +127,7 @@ namespace TocoMilkTeaShop
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = null;
@@ -215,6 +215,21 @@ namespace TocoMilkTeaShop
             this.btHub.UseVisualStyleBackColor = false;
             this.btHub.Click += new System.EventHandler(this.btHub_Click);
             // 
+            // btmaterials
+            // 
+            this.btmaterials.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btmaterials.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btmaterials.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btmaterials.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btmaterials.Location = new System.Drawing.Point(454, 0);
+            this.btmaterials.Margin = new System.Windows.Forms.Padding(0);
+            this.btmaterials.Name = "btmaterials";
+            this.btmaterials.Size = new System.Drawing.Size(128, 33);
+            this.btmaterials.TabIndex = 2;
+            this.btmaterials.Text = "NGUYÊN LIỆU";
+            this.btmaterials.UseVisualStyleBackColor = false;
+            this.btmaterials.Click += new System.EventHandler(this.btmaterials_Click);
+            // 
             // btBill
             // 
             this.btBill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
@@ -262,21 +277,6 @@ namespace TocoMilkTeaShop
             this.panelFooter.Name = "panelFooter";
             this.panelFooter.Size = new System.Drawing.Size(1350, 19);
             this.panelFooter.TabIndex = 0;
-            // 
-            // btmaterials
-            // 
-            this.btmaterials.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btmaterials.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btmaterials.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btmaterials.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btmaterials.Location = new System.Drawing.Point(454, 0);
-            this.btmaterials.Margin = new System.Windows.Forms.Padding(0);
-            this.btmaterials.Name = "btmaterials";
-            this.btmaterials.Size = new System.Drawing.Size(128, 33);
-            this.btmaterials.TabIndex = 2;
-            this.btmaterials.Text = "NGUYÊN LIỆU";
-            this.btmaterials.UseVisualStyleBackColor = false;
-            this.btmaterials.Click += new System.EventHandler(this.btmaterials_Click);
             // 
             // MainManager
             // 

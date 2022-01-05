@@ -26,7 +26,7 @@ namespace TocoMilkTeaShop
         {
             //hien thi danh sach cac san pham ban
             DisplayMenu();
-            InitEmployee();
+           
         }
 
         private void SetUPDgvOrder()
@@ -73,26 +73,17 @@ namespace TocoMilkTeaShop
         {
             dgvProduct.DataSource = db.Menus.ToList();
         }
-        private void InitEmployee()
-        {
-            db.Employees.Load();
-            cbbEmployee.DataSource = db.Employees.Local;
-            cbbEmployee.DisplayMember = "FullName";
-            cbbEmployee.ValueMember = "EmployeeID";
-        }
+
         private void dgvProduct_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
             //neu dgvOrder = null 
             if (dgvOrder.DataSource == null)
             {
-                //Them bill
                 AddNewBill();
-                //Hien thi thong tin bill do ra man hinh
                 Bill currentBill = db.Bills.OrderByDescending(b => b.BillID).First();
                 lbBillID.Text = currentBill.BillID.ToString();
                 lbTime.Text = DateTime.Now.ToString(); 
-                //Them mon do vao Orders
                 AddOrderIntoCurrentBill(e);
                 DisplayOrdersOfCurrentBill();
             }
@@ -177,8 +168,6 @@ namespace TocoMilkTeaShop
             var bill = new Bill()
             {
                 Time = DateTime.Now,
-                BranchID = db.Branches.FirstOrDefault(b => b.BranchName == address).BranchID,
-                EmployeeID = Convert.ToInt32(cbbEmployee.SelectedValue)
             };
 
             try
@@ -261,9 +250,15 @@ namespace TocoMilkTeaShop
         }
         private void tbSearch_TextChanged(object sender, EventArgs e)
         {
-            if (tbSearch.Text == "") DisplayMenu();
-            dgvProduct.DataSource = db.Menus.Where(p => p.ProductName.Contains(tbSearch.Text.Trim())).ToList();
+            if (tbSearch.Text == "") 
+                DisplayMenu();
+            else 
+                dgvProduct.DataSource = db.Menus.Where(p => p.ProductName.Contains(tbSearch.Text.Trim())).ToList();
         }
 
+        private void dgvProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

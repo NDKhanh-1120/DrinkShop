@@ -29,21 +29,18 @@ namespace TocoMilkTeaShop
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvOrder = new System.Windows.Forms.DataGridView();
             this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quatity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Money = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DeleteThis = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.cbbEmployee = new System.Windows.Forms.ComboBox();
             this.lbBrach = new System.Windows.Forms.Label();
             this.lbTime = new System.Windows.Forms.Label();
             this.lbBillID = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.tbCustomerGiving = new System.Windows.Forms.TextBox();
@@ -54,10 +51,6 @@ namespace TocoMilkTeaShop
             this.lbTotal = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.dgvProduct = new System.Windows.Forms.DataGridView();
-            this.ProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PriceP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductImage = new System.Windows.Forms.DataGridViewImageColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btCancel = new System.Windows.Forms.Button();
             this.tbSearch = new System.Windows.Forms.TextBox();
@@ -65,6 +58,10 @@ namespace TocoMilkTeaShop
             this.btPlus = new System.Windows.Forms.Button();
             this.btMinus = new System.Windows.Forms.Button();
             this.btClearTB = new System.Windows.Forms.Button();
+            this.ProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PriceP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductImage = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -82,14 +79,14 @@ namespace TocoMilkTeaShop
             this.Money,
             this.DeleteThis});
             this.dgvOrder.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvOrder.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvOrder.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvOrder.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
             this.dgvOrder.Location = new System.Drawing.Point(703, 102);
             this.dgvOrder.MultiSelect = false;
@@ -136,24 +133,16 @@ namespace TocoMilkTeaShop
             // 
             // DeleteThis
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Red;
-            this.DeleteThis.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Red;
+            this.DeleteThis.DefaultCellStyle = dataGridViewCellStyle1;
             this.DeleteThis.HeaderText = "Xóa";
             this.DeleteThis.Name = "DeleteThis";
             this.DeleteThis.ReadOnly = true;
             this.DeleteThis.Width = 45;
-            // 
-            // cbbEmployee
-            // 
-            this.cbbEmployee.FormattingEnabled = true;
-            this.cbbEmployee.Location = new System.Drawing.Point(809, 50);
-            this.cbbEmployee.Name = "cbbEmployee";
-            this.cbbEmployee.Size = new System.Drawing.Size(200, 27);
-            this.cbbEmployee.TabIndex = 26;
             // 
             // lbBrach
             // 
@@ -182,31 +171,11 @@ namespace TocoMilkTeaShop
             this.lbBillID.Size = new System.Drawing.Size(0, 19);
             this.lbBillID.TabIndex = 25;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label3.Location = new System.Drawing.Point(717, 53);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 19);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "Nhân viên :";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label4.Location = new System.Drawing.Point(1038, 53);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 19);
-            this.label4.TabIndex = 20;
-            this.label4.Text = "Chi nhánh :";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label2.Location = new System.Drawing.Point(1038, 23);
+            this.label2.Location = new System.Drawing.Point(1038, 46);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 19);
             this.label2.TabIndex = 21;
@@ -216,7 +185,7 @@ namespace TocoMilkTeaShop
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label6.Location = new System.Drawing.Point(717, 23);
+            this.label6.Location = new System.Drawing.Point(717, 46);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(95, 19);
             this.label6.TabIndex = 22;
@@ -232,12 +201,13 @@ namespace TocoMilkTeaShop
             // 
             // btnPay
             // 
+            this.btnPay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnPay.Location = new System.Drawing.Point(1031, 482);
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(124, 36);
             this.btnPay.TabIndex = 0;
             this.btnPay.Text = "Thanh Toán";
-            this.btnPay.UseVisualStyleBackColor = true;
+            this.btnPay.UseVisualStyleBackColor = false;
             this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
             // label8
@@ -295,75 +265,45 @@ namespace TocoMilkTeaShop
             this.PriceP,
             this.ProductImage});
             this.dgvProduct.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProduct.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProduct.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvProduct.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dgvProduct.Location = new System.Drawing.Point(78, 36);
+            this.dgvProduct.Location = new System.Drawing.Point(58, 36);
             this.dgvProduct.Name = "dgvProduct";
             this.dgvProduct.ReadOnly = true;
-            this.dgvProduct.RowTemplate.Height = 60;
+            this.dgvProduct.RowHeadersVisible = false;
+            this.dgvProduct.RowTemplate.Height = 75;
+            this.dgvProduct.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProduct.Size = new System.Drawing.Size(610, 579);
+            this.dgvProduct.Size = new System.Drawing.Size(627, 579);
             this.dgvProduct.TabIndex = 17;
             this.dgvProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduct_CellClick);
-            // 
-            // ProductID
-            // 
-            this.ProductID.DataPropertyName = "ProductID";
-            this.ProductID.HeaderText = "Mã";
-            this.ProductID.Name = "ProductID";
-            this.ProductID.ReadOnly = true;
-            this.ProductID.Width = 60;
-            // 
-            // ProductN
-            // 
-            this.ProductN.DataPropertyName = "ProductName";
-            this.ProductN.HeaderText = "Tên sản phẩm";
-            this.ProductN.Name = "ProductN";
-            this.ProductN.ReadOnly = true;
-            this.ProductN.Width = 280;
-            // 
-            // PriceP
-            // 
-            this.PriceP.DataPropertyName = "Price";
-            this.PriceP.HeaderText = "Đơn giá";
-            this.PriceP.Name = "PriceP";
-            this.PriceP.ReadOnly = true;
-            // 
-            // ProductImage
-            // 
-            this.ProductImage.DataPropertyName = "ProductImage";
-            this.ProductImage.HeaderText = "Ảnh";
-            this.ProductImage.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.ProductImage.Name = "ProductImage";
-            this.ProductImage.ReadOnly = true;
-            this.ProductImage.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProductImage.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.ProductImage.Width = 140;
+            this.dgvProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduct_CellContentClick);
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.pictureBox1.Location = new System.Drawing.Point(703, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(703, 36);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(593, 99);
+            this.pictureBox1.Size = new System.Drawing.Size(593, 67);
             this.pictureBox1.TabIndex = 35;
             this.pictureBox1.TabStop = false;
             // 
             // btCancel
             // 
+            this.btCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btCancel.Location = new System.Drawing.Point(1031, 546);
             this.btCancel.Name = "btCancel";
             this.btCancel.Size = new System.Drawing.Size(124, 36);
             this.btCancel.TabIndex = 0;
             this.btCancel.Text = "Hủy bỏ";
-            this.btCancel.UseVisualStyleBackColor = true;
+            this.btCancel.UseVisualStyleBackColor = false;
             this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
             // 
             // tbSearch
@@ -416,6 +356,43 @@ namespace TocoMilkTeaShop
             this.btClearTB.UseVisualStyleBackColor = true;
             this.btClearTB.Click += new System.EventHandler(this.btClearTB_Click);
             // 
+            // ProductID
+            // 
+            this.ProductID.DataPropertyName = "ProductID";
+            this.ProductID.HeaderText = "Mã";
+            this.ProductID.Name = "ProductID";
+            this.ProductID.ReadOnly = true;
+            this.ProductID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ProductID.Width = 60;
+            // 
+            // ProductN
+            // 
+            this.ProductN.DataPropertyName = "ProductName";
+            this.ProductN.HeaderText = "Tên sản phẩm";
+            this.ProductN.Name = "ProductN";
+            this.ProductN.ReadOnly = true;
+            this.ProductN.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ProductN.Width = 330;
+            // 
+            // PriceP
+            // 
+            this.PriceP.DataPropertyName = "Price";
+            this.PriceP.HeaderText = "Đơn giá";
+            this.PriceP.Name = "PriceP";
+            this.PriceP.ReadOnly = true;
+            this.PriceP.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // ProductImage
+            // 
+            this.ProductImage.DataPropertyName = "ProductImage";
+            this.ProductImage.HeaderText = "Ảnh";
+            this.ProductImage.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.ProductImage.Name = "ProductImage";
+            this.ProductImage.ReadOnly = true;
+            this.ProductImage.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ProductImage.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ProductImage.Width = 120;
+            // 
             // UCOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -426,12 +403,9 @@ namespace TocoMilkTeaShop
             this.Controls.Add(this.btClearTB);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbSearch);
-            this.Controls.Add(this.cbbEmployee);
             this.Controls.Add(this.lbBrach);
             this.Controls.Add(this.lbTime);
             this.Controls.Add(this.lbBillID);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.tbCustomerGiving);
@@ -461,12 +435,9 @@ namespace TocoMilkTeaShop
         #endregion
 
         private System.Windows.Forms.DataGridView dgvOrder;
-        private System.Windows.Forms.ComboBox cbbEmployee;
         private System.Windows.Forms.Label lbBrach;
         private System.Windows.Forms.Label lbTime;
         private System.Windows.Forms.Label lbBillID;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox tbCustomerGiving;
@@ -481,10 +452,6 @@ namespace TocoMilkTeaShop
         private System.Windows.Forms.Button btCancel;
         private System.Windows.Forms.TextBox tbSearch;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PriceP;
-        private System.Windows.Forms.DataGridViewImageColumn ProductImage;
         private System.Windows.Forms.Button btPlus;
         private System.Windows.Forms.Button btMinus;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
@@ -493,5 +460,9 @@ namespace TocoMilkTeaShop
         private System.Windows.Forms.DataGridViewTextBoxColumn Money;
         private System.Windows.Forms.DataGridViewButtonColumn DeleteThis;
         private System.Windows.Forms.Button btClearTB;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PriceP;
+        private System.Windows.Forms.DataGridViewImageColumn ProductImage;
     }
 }

@@ -14,6 +14,10 @@ namespace TocoMilkTeaShop
     public partial class MainManager : Form
     {
         Login loginForm = new Login();
+        UCOrder ucOrder = new UCOrder();
+        UCStatistical ucStatistic = new UCStatistical();
+
+
         public MainManager()
         {
             InitializeComponent();
@@ -39,7 +43,6 @@ namespace TocoMilkTeaShop
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            UCOrder ucOrder = new UCOrder();
             AddTab(ucOrder);
         }
 
@@ -57,8 +60,7 @@ namespace TocoMilkTeaShop
 
         private void btStatistical_Click(object sender, EventArgs e)
         {
-            UCStatistical uc = new UCStatistical();
-            AddTab(uc);
+            AddTab(ucStatistic);
         }
 
         private void btImportBill_Click(object sender, EventArgs e)
@@ -84,10 +86,10 @@ namespace TocoMilkTeaShop
             UCEmployee uc = new UCEmployee();
             AddTab(uc);
         }
-        public string GetAddressName()
-        {
-            return lbAddressName.Text;
-        }
+        //public string GetAddressName()
+        //{
+        //    return lbAddressName.Text;
+        //}
 
         private void btSetting_Click(object sender, EventArgs e)
         {

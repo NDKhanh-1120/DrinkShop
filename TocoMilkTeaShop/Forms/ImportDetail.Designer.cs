@@ -327,6 +327,7 @@ namespace TocoMilkTeaShop.Forms
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ImportDetail";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Chi tiết đơn hàng";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ImportDetail_FormClosing);
             this.Load += new System.EventHandler(this.ImportDetail_Load);

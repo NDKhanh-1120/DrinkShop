@@ -32,9 +32,7 @@ namespace TocoMilkTeaShop
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainManager));
             this.btnOrder = new System.Windows.Forms.Button();
             this.btLogout = new System.Windows.Forms.Button();
-            this.btSetting = new System.Windows.Forms.Button();
             this.panelHeader = new System.Windows.Forms.Panel();
-            this.lbAddressName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelMenu = new System.Windows.Forms.Panel();
@@ -79,39 +77,19 @@ namespace TocoMilkTeaShop
             this.btLogout.UseVisualStyleBackColor = true;
             this.btLogout.Click += new System.EventHandler(this.btLogout_Click);
             // 
-            // btSetting
-            // 
-            this.btSetting.Location = new System.Drawing.Point(1217, 14);
-            this.btSetting.Name = "btSetting";
-            this.btSetting.Size = new System.Drawing.Size(62, 34);
-            this.btSetting.TabIndex = 2;
-            this.btSetting.Text = "CÀI ĐẶT";
-            this.btSetting.UseVisualStyleBackColor = true;
-            this.btSetting.Click += new System.EventHandler(this.btSetting_Click);
-            // 
             // panelHeader
             // 
             this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.panelHeader.Controls.Add(this.lbAddressName);
             this.panelHeader.Controls.Add(this.label1);
+            this.panelHeader.Controls.Add(this.btnEmployee);
+            this.panelHeader.Controls.Add(this.btHub);
             this.panelHeader.Controls.Add(this.pictureBox1);
             this.panelHeader.Controls.Add(this.btLogout);
-            this.panelHeader.Controls.Add(this.btSetting);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(1350, 61);
             this.panelHeader.TabIndex = 3;
-            // 
-            // lbAddressName
-            // 
-            this.lbAddressName.AutoSize = true;
-            this.lbAddressName.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAddressName.Location = new System.Drawing.Point(192, 14);
-            this.lbAddressName.Name = "lbAddressName";
-            this.lbAddressName.Size = new System.Drawing.Size(143, 28);
-            this.lbAddressName.TabIndex = 3;
-            this.lbAddressName.Text = "Nguyễn Trãi";
             // 
             // label1
             // 
@@ -143,8 +121,6 @@ namespace TocoMilkTeaShop
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.panelMenu.Controls.Add(this.btStatistical);
             this.panelMenu.Controls.Add(this.btImportBill);
-            this.panelMenu.Controls.Add(this.btnEmployee);
-            this.panelMenu.Controls.Add(this.btHub);
             this.panelMenu.Controls.Add(this.btmaterials);
             this.panelMenu.Controls.Add(this.btBill);
             this.panelMenu.Controls.Add(this.btnProduct);
@@ -161,7 +137,7 @@ namespace TocoMilkTeaShop
             this.btStatistical.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btStatistical.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btStatistical.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btStatistical.Location = new System.Drawing.Point(794, 0);
+            this.btStatistical.Location = new System.Drawing.Point(581, 0);
             this.btStatistical.Margin = new System.Windows.Forms.Padding(0);
             this.btStatistical.Name = "btStatistical";
             this.btStatistical.Size = new System.Drawing.Size(106, 33);
@@ -189,30 +165,34 @@ namespace TocoMilkTeaShop
             // 
             this.btnEmployee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEmployee.Enabled = false;
             this.btnEmployee.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmployee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnEmployee.Location = new System.Drawing.Point(688, 0);
+            this.btnEmployee.Location = new System.Drawing.Point(1176, 14);
             this.btnEmployee.Margin = new System.Windows.Forms.Padding(0);
             this.btnEmployee.Name = "btnEmployee";
             this.btnEmployee.Size = new System.Drawing.Size(106, 33);
             this.btnEmployee.TabIndex = 2;
             this.btnEmployee.Text = "NHÂN SỰ";
             this.btnEmployee.UseVisualStyleBackColor = false;
+            this.btnEmployee.Visible = false;
             this.btnEmployee.Click += new System.EventHandler(this.btnEmployee_Click);
             // 
             // btHub
             // 
             this.btHub.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btHub.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btHub.Enabled = false;
             this.btHub.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btHub.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btHub.Location = new System.Drawing.Point(582, 0);
+            this.btHub.Location = new System.Drawing.Point(1070, 14);
             this.btHub.Margin = new System.Windows.Forms.Padding(0);
             this.btHub.Name = "btHub";
             this.btHub.Size = new System.Drawing.Size(106, 33);
             this.btHub.TabIndex = 2;
             this.btHub.Text = "KHO";
             this.btHub.UseVisualStyleBackColor = false;
+            this.btHub.Visible = false;
             this.btHub.Click += new System.EventHandler(this.btHub_Click);
             // 
             // btmaterials
@@ -221,7 +201,7 @@ namespace TocoMilkTeaShop
             this.btmaterials.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btmaterials.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btmaterials.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btmaterials.Location = new System.Drawing.Point(454, 0);
+            this.btmaterials.Location = new System.Drawing.Point(455, 0);
             this.btmaterials.Margin = new System.Windows.Forms.Padding(0);
             this.btmaterials.Name = "btmaterials";
             this.btmaterials.Size = new System.Drawing.Size(128, 33);
@@ -303,7 +283,6 @@ namespace TocoMilkTeaShop
         #endregion
         private System.Windows.Forms.Button btnOrder;
         private System.Windows.Forms.Button btLogout;
-        private System.Windows.Forms.Button btSetting;
         private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Label label1;
@@ -317,7 +296,6 @@ namespace TocoMilkTeaShop
         private System.Windows.Forms.Button btImportBill;
         private System.Windows.Forms.Panel panelFooter;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.Label lbAddressName;
         private System.Windows.Forms.Button btmaterials;
     }
 }

@@ -164,7 +164,7 @@ namespace TocoMilkTeaShop
         }
         private void AddNewBill()
         {
-            string address = new MainManager().GetAddressName();
+            //string address = new MainManager().GetAddressName();
             var bill = new Bill()
             {
                 Time = DateTime.Now,

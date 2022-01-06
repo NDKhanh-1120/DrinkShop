@@ -211,6 +211,14 @@
   <ItemGroup>
     <Content Include="Image\deleteicon.jpg" />
     <Content Include="Image\save icon.png" />
+    <None Include="Resources\sta.png" />
+    <None Include="Resources\imp.png" />
+    <None Include="Resources\bill.png" />
+    <None Include="Resources\mat.png" />
+    <None Include="Resources\drink.png" />
+    <None Include="Resources\re.png" />
+    <None Include="Resources\inter.png" />
+    <None Include="Resources\co.png" />
     <None Include="Resources\add icon.png" />
     <None Include="Resources\deleteicon.jpg" />
     <None Include="Resources\save icon.png" />

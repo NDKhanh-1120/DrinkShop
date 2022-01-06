@@ -62,6 +62,7 @@ namespace TocoMilkTeaShop.Tabs
                  Total = bop.Sum(q=>q.o.Quatity * q.p.Price)  
              }).ToList();
         }
+
         private void DisplayBillsByDay(DateTime datetime)
         {
             dgv.DataSource =

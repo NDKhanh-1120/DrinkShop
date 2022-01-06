@@ -52,14 +52,23 @@ namespace TocoMilkTeaShop.Tabs
             this.lbChooseMouth = new System.Windows.Forms.Label();
             this.dtpMouth = new System.Windows.Forms.DateTimePicker();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(64, 62);
+            this.label1.Location = new System.Drawing.Point(129, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 21);
             this.label1.TabIndex = 0;
@@ -72,7 +81,7 @@ namespace TocoMilkTeaShop.Tabs
             this.cbbTypeOfTime.Items.AddRange(new object[] {
             "Theo tháng",
             "Theo khoảng thời gian"});
-            this.cbbTypeOfTime.Location = new System.Drawing.Point(183, 59);
+            this.cbbTypeOfTime.Location = new System.Drawing.Point(248, 33);
             this.cbbTypeOfTime.Name = "cbbTypeOfTime";
             this.cbbTypeOfTime.Size = new System.Drawing.Size(198, 29);
             this.cbbTypeOfTime.TabIndex = 1;
@@ -83,7 +92,7 @@ namespace TocoMilkTeaShop.Tabs
             this.dtpFrom.CustomFormat = "dd/MM/yyyy";
             this.dtpFrom.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFrom.Location = new System.Drawing.Point(533, 59);
+            this.dtpFrom.Location = new System.Drawing.Point(598, 33);
             this.dtpFrom.Name = "dtpFrom";
             this.dtpFrom.Size = new System.Drawing.Size(200, 28);
             this.dtpFrom.TabIndex = 2;
@@ -95,7 +104,7 @@ namespace TocoMilkTeaShop.Tabs
             this.dtpTo.CustomFormat = "dd/MM/yyyy";
             this.dtpTo.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpTo.Location = new System.Drawing.Point(895, 60);
+            this.dtpTo.Location = new System.Drawing.Point(960, 34);
             this.dtpTo.Name = "dtpTo";
             this.dtpTo.Size = new System.Drawing.Size(200, 28);
             this.dtpTo.TabIndex = 2;
@@ -108,7 +117,7 @@ namespace TocoMilkTeaShop.Tabs
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(63, 139);
+            this.label2.Location = new System.Drawing.Point(123, 119);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 21);
             this.label2.TabIndex = 3;
@@ -120,7 +129,7 @@ namespace TocoMilkTeaShop.Tabs
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(352, 139);
+            this.label3.Location = new System.Drawing.Point(422, 119);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 21);
             this.label3.TabIndex = 3;
@@ -132,7 +141,7 @@ namespace TocoMilkTeaShop.Tabs
             this.lbRevenue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.lbRevenue.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbRevenue.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lbRevenue.Location = new System.Drawing.Point(169, 139);
+            this.lbRevenue.Location = new System.Drawing.Point(229, 119);
             this.lbRevenue.Name = "lbRevenue";
             this.lbRevenue.Size = new System.Drawing.Size(19, 21);
             this.lbRevenue.TabIndex = 3;
@@ -144,7 +153,7 @@ namespace TocoMilkTeaShop.Tabs
             this.lbCost.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.lbCost.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCost.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lbCost.Location = new System.Drawing.Point(432, 139);
+            this.lbCost.Location = new System.Drawing.Point(501, 119);
             this.lbCost.Name = "lbCost";
             this.lbCost.Size = new System.Drawing.Size(19, 21);
             this.lbCost.TabIndex = 3;
@@ -156,7 +165,7 @@ namespace TocoMilkTeaShop.Tabs
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.label6.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(837, 139);
+            this.label6.Location = new System.Drawing.Point(837, 119);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(40, 21);
             this.label6.TabIndex = 3;
@@ -168,7 +177,7 @@ namespace TocoMilkTeaShop.Tabs
             this.lbInterest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.lbInterest.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbInterest.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lbInterest.Location = new System.Drawing.Point(892, 139);
+            this.lbInterest.Location = new System.Drawing.Point(892, 119);
             this.lbInterest.Name = "lbInterest";
             this.lbInterest.Size = new System.Drawing.Size(19, 21);
             this.lbInterest.TabIndex = 3;
@@ -208,7 +217,10 @@ namespace TocoMilkTeaShop.Tabs
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.panel1.Location = new System.Drawing.Point(0, 115);
+            this.panel1.Controls.Add(this.pictureBox3);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Location = new System.Drawing.Point(0, 95);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1350, 88);
             this.panel1.TabIndex = 5;
@@ -217,7 +229,7 @@ namespace TocoMilkTeaShop.Tabs
             // 
             this.lbdtpFrom.AutoSize = true;
             this.lbdtpFrom.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbdtpFrom.Location = new System.Drawing.Point(414, 62);
+            this.lbdtpFrom.Location = new System.Drawing.Point(479, 36);
             this.lbdtpFrom.Name = "lbdtpFrom";
             this.lbdtpFrom.Size = new System.Drawing.Size(114, 21);
             this.lbdtpFrom.TabIndex = 0;
@@ -228,7 +240,7 @@ namespace TocoMilkTeaShop.Tabs
             // 
             this.lbdtpTo.AutoSize = true;
             this.lbdtpTo.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbdtpTo.Location = new System.Drawing.Point(775, 65);
+            this.lbdtpTo.Location = new System.Drawing.Point(840, 39);
             this.lbdtpTo.Name = "lbdtpTo";
             this.lbdtpTo.Size = new System.Drawing.Size(118, 21);
             this.lbdtpTo.TabIndex = 0;
@@ -239,7 +251,7 @@ namespace TocoMilkTeaShop.Tabs
             // 
             this.lbChooseMouth.AutoSize = true;
             this.lbChooseMouth.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbChooseMouth.Location = new System.Drawing.Point(414, 62);
+            this.lbChooseMouth.Location = new System.Drawing.Point(479, 36);
             this.lbChooseMouth.Name = "lbChooseMouth";
             this.lbChooseMouth.Size = new System.Drawing.Size(100, 21);
             this.lbChooseMouth.TabIndex = 0;
@@ -250,17 +262,60 @@ namespace TocoMilkTeaShop.Tabs
             this.dtpMouth.CustomFormat = "MM/yyyy";
             this.dtpMouth.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpMouth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpMouth.Location = new System.Drawing.Point(533, 59);
+            this.dtpMouth.Location = new System.Drawing.Point(598, 33);
             this.dtpMouth.Name = "dtpMouth";
             this.dtpMouth.Size = new System.Drawing.Size(200, 28);
             this.dtpMouth.TabIndex = 2;
             this.dtpMouth.ValueChanged += new System.EventHandler(this.dtpMouth_ValueChanged);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.pictureBox4.BackgroundImage = global::TocoMilkTeaShop.Properties.Resources.sta;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox4.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(91, 84);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 9;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = global::TocoMilkTeaShop.Properties.Resources.inter;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox3.Location = new System.Drawing.Point(779, 13);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(50, 47);
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::TocoMilkTeaShop.Properties.Resources.co;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(366, 13);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(50, 47);
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::TocoMilkTeaShop.Properties.Resources.re;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(67, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 47);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // UCStatistical
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.dtpFrom);
             this.Controls.Add(this.lbdtpFrom);
             this.Controls.Add(this.chart);
@@ -281,6 +336,11 @@ namespace TocoMilkTeaShop.Tabs
             this.Size = new System.Drawing.Size(1350, 635);
             this.Load += new System.EventHandler(this.UCStatistical_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -305,5 +365,9 @@ namespace TocoMilkTeaShop.Tabs
         private System.Windows.Forms.Label lbChooseMouth;
         private System.Windows.Forms.DateTimePicker dtpMouth;
         private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }

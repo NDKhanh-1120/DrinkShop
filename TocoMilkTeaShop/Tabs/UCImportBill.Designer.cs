@@ -52,13 +52,15 @@ namespace TocoMilkTeaShop.Tabs
             this.btDisplayByDate = new System.Windows.Forms.Button();
             this.btDisplayByMouth = new System.Windows.Forms.Button();
             this.btDisplayAll = new System.Windows.Forms.Button();
-            this.btRemove = new System.Windows.Forms.Button();
-            this.btUpdate = new System.Windows.Forms.Button();
-            this.btAdd = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.lbTotalCost = new System.Windows.Forms.Label();
             this.btDisplayToday = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btRemove = new System.Windows.Forms.Button();
+            this.btUpdate = new System.Windows.Forms.Button();
+            this.btAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvImportBill)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvImportBill
@@ -89,12 +91,12 @@ namespace TocoMilkTeaShop.Tabs
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvImportBill.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvImportBill.Location = new System.Drawing.Point(206, 66);
+            this.dgvImportBill.Location = new System.Drawing.Point(206, 104);
             this.dgvImportBill.Name = "dgvImportBill";
             this.dgvImportBill.ReadOnly = true;
             this.dgvImportBill.RowHeadersVisible = false;
             this.dgvImportBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvImportBill.Size = new System.Drawing.Size(1104, 537);
+            this.dgvImportBill.Size = new System.Drawing.Size(1104, 499);
             this.dgvImportBill.TabIndex = 0;
             this.dgvImportBill.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvImportBill_CellClick);
             this.dgvImportBill.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvImportBill_CellDoubleClick);
@@ -241,9 +243,9 @@ namespace TocoMilkTeaShop.Tabs
             this.dtpSelect.CustomFormat = "dd/MM/yyyy";
             this.dtpSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpSelect.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpSelect.Location = new System.Drawing.Point(3, 75);
+            this.dtpSelect.Location = new System.Drawing.Point(21, 104);
             this.dtpSelect.Name = "dtpSelect";
-            this.dtpSelect.Size = new System.Drawing.Size(199, 26);
+            this.dtpSelect.Size = new System.Drawing.Size(150, 26);
             this.dtpSelect.TabIndex = 4;
             this.dtpSelect.ValueChanged += new System.EventHandler(this.dtpSelect_ValueChanged);
             // 
@@ -251,7 +253,7 @@ namespace TocoMilkTeaShop.Tabs
             // 
             this.btDisplayByDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btDisplayByDate.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDisplayByDate.Location = new System.Drawing.Point(21, 170);
+            this.btDisplayByDate.Location = new System.Drawing.Point(21, 185);
             this.btDisplayByDate.Name = "btDisplayByDate";
             this.btDisplayByDate.Size = new System.Drawing.Size(150, 35);
             this.btDisplayByDate.TabIndex = 5;
@@ -263,7 +265,7 @@ namespace TocoMilkTeaShop.Tabs
             // 
             this.btDisplayByMouth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btDisplayByMouth.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDisplayByMouth.Location = new System.Drawing.Point(21, 211);
+            this.btDisplayByMouth.Location = new System.Drawing.Point(21, 226);
             this.btDisplayByMouth.Name = "btDisplayByMouth";
             this.btDisplayByMouth.Size = new System.Drawing.Size(150, 35);
             this.btDisplayByMouth.TabIndex = 5;
@@ -275,13 +277,57 @@ namespace TocoMilkTeaShop.Tabs
             // 
             this.btDisplayAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btDisplayAll.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDisplayAll.Location = new System.Drawing.Point(21, 252);
+            this.btDisplayAll.Location = new System.Drawing.Point(21, 267);
             this.btDisplayAll.Name = "btDisplayAll";
             this.btDisplayAll.Size = new System.Drawing.Size(150, 35);
             this.btDisplayAll.TabIndex = 5;
             this.btDisplayAll.Text = "Hiển thị tất cả";
             this.btDisplayAll.UseVisualStyleBackColor = false;
             this.btDisplayAll.Click += new System.EventHandler(this.btDisplayAll_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(43, 374);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(104, 21);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Tổng chi phí";
+            // 
+            // lbTotalCost
+            // 
+            this.lbTotalCost.AutoSize = true;
+            this.lbTotalCost.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotalCost.Location = new System.Drawing.Point(77, 405);
+            this.lbTotalCost.Name = "lbTotalCost";
+            this.lbTotalCost.Size = new System.Drawing.Size(19, 21);
+            this.lbTotalCost.TabIndex = 6;
+            this.lbTotalCost.Text = "0";
+            // 
+            // btDisplayToday
+            // 
+            this.btDisplayToday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btDisplayToday.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDisplayToday.Location = new System.Drawing.Point(21, 144);
+            this.btDisplayToday.Name = "btDisplayToday";
+            this.btDisplayToday.Size = new System.Drawing.Size(150, 35);
+            this.btDisplayToday.TabIndex = 5;
+            this.btDisplayToday.Text = "Hiển thị hôm nay";
+            this.btDisplayToday.UseVisualStyleBackColor = false;
+            this.btDisplayToday.Click += new System.EventHandler(this.btDisplayToday_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.pictureBox1.BackgroundImage = global::TocoMilkTeaShop.Properties.Resources.imp;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(91, 84);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
             // 
             // btRemove
             // 
@@ -317,41 +363,12 @@ namespace TocoMilkTeaShop.Tabs
             this.btAdd.UseVisualStyleBackColor = false;
             this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(43, 374);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 13);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Tổng chi phí";
-            // 
-            // lbTotalCost
-            // 
-            this.lbTotalCost.AutoSize = true;
-            this.lbTotalCost.Location = new System.Drawing.Point(77, 405);
-            this.lbTotalCost.Name = "lbTotalCost";
-            this.lbTotalCost.Size = new System.Drawing.Size(13, 13);
-            this.lbTotalCost.TabIndex = 6;
-            this.lbTotalCost.Text = "0";
-            // 
-            // btDisplayToday
-            // 
-            this.btDisplayToday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btDisplayToday.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDisplayToday.Location = new System.Drawing.Point(21, 129);
-            this.btDisplayToday.Name = "btDisplayToday";
-            this.btDisplayToday.Size = new System.Drawing.Size(150, 35);
-            this.btDisplayToday.TabIndex = 5;
-            this.btDisplayToday.Text = "Hiển thị hôm nay";
-            this.btDisplayToday.UseVisualStyleBackColor = false;
-            this.btDisplayToday.Click += new System.EventHandler(this.btDisplayToday_Click);
-            // 
             // UCImportBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbTotalCost);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btDisplayToday);
@@ -374,9 +391,10 @@ namespace TocoMilkTeaShop.Tabs
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvImportBill);
             this.Name = "UCImportBill";
-            this.Size = new System.Drawing.Size(1390, 635);
+            this.Size = new System.Drawing.Size(1402, 635);
             this.Load += new System.EventHandler(this.UCImportBill_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvImportBill)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -411,5 +429,6 @@ namespace TocoMilkTeaShop.Tabs
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lbTotalCost;
         private System.Windows.Forms.Button btDisplayToday;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

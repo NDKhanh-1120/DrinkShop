@@ -43,11 +43,6 @@ namespace TocoMilkTeaShop.Forms
             this.label9 = new System.Windows.Forms.Label();
             this.lbNote = new System.Windows.Forms.Label();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.MaterialName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quatity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DeleteThis = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tbMaterialName = new System.Windows.Forms.TextBox();
             this.tbQuatity = new System.Windows.Forms.TextBox();
             this.tbPrice = new System.Windows.Forms.TextBox();
@@ -55,6 +50,12 @@ namespace TocoMilkTeaShop.Forms
             this.btCloseTB = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.cbbMaterialName = new System.Windows.Forms.ComboBox();
+            this.MaterialName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quatity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DeleteThis = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -183,6 +184,7 @@ namespace TocoMilkTeaShop.Forms
             this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaterialName,
             this.Quatity,
+            this.Unit,
             this.Price,
             this.Total,
             this.DeleteThis});
@@ -202,39 +204,6 @@ namespace TocoMilkTeaShop.Forms
             this.dgv.Size = new System.Drawing.Size(875, 403);
             this.dgv.TabIndex = 1;
             this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
-            // 
-            // MaterialName
-            // 
-            this.MaterialName.DataPropertyName = "MaterialName";
-            this.MaterialName.HeaderText = "Tên hàng (nl)";
-            this.MaterialName.Name = "MaterialName";
-            this.MaterialName.Width = 370;
-            // 
-            // Quatity
-            // 
-            this.Quatity.DataPropertyName = "Quatity";
-            this.Quatity.HeaderText = "Số lượng nhập";
-            this.Quatity.Name = "Quatity";
-            // 
-            // Price
-            // 
-            this.Price.DataPropertyName = "Price";
-            this.Price.HeaderText = "Giá nhập";
-            this.Price.Name = "Price";
-            this.Price.Width = 150;
-            // 
-            // Total
-            // 
-            this.Total.DataPropertyName = "Total";
-            this.Total.HeaderText = "Thành tiền";
-            this.Total.Name = "Total";
-            this.Total.Width = 200;
-            // 
-            // DeleteThis
-            // 
-            this.DeleteThis.HeaderText = "Xóa";
-            this.DeleteThis.Name = "DeleteThis";
-            this.DeleteThis.Width = 50;
             // 
             // tbMaterialName
             // 
@@ -299,6 +268,46 @@ namespace TocoMilkTeaShop.Forms
             this.cbbMaterialName.Size = new System.Drawing.Size(363, 27);
             this.cbbMaterialName.TabIndex = 5;
             // 
+            // MaterialName
+            // 
+            this.MaterialName.DataPropertyName = "MaterialName";
+            this.MaterialName.HeaderText = "Tên hàng (nl)";
+            this.MaterialName.Name = "MaterialName";
+            this.MaterialName.Width = 340;
+            // 
+            // Quatity
+            // 
+            this.Quatity.DataPropertyName = "Quatity";
+            this.Quatity.HeaderText = "Số lượng nhập";
+            this.Quatity.Name = "Quatity";
+            this.Quatity.Width = 50;
+            // 
+            // Unit
+            // 
+            this.Unit.HeaderText = "Đơn vị";
+            this.Unit.Name = "Unit";
+            this.Unit.Width = 80;
+            // 
+            // Price
+            // 
+            this.Price.DataPropertyName = "Price";
+            this.Price.HeaderText = "Giá nhập";
+            this.Price.Name = "Price";
+            this.Price.Width = 150;
+            // 
+            // Total
+            // 
+            this.Total.DataPropertyName = "Total";
+            this.Total.HeaderText = "Thành tiền";
+            this.Total.Name = "Total";
+            this.Total.Width = 200;
+            // 
+            // DeleteThis
+            // 
+            this.DeleteThis.HeaderText = "Xóa";
+            this.DeleteThis.Name = "DeleteThis";
+            this.DeleteThis.Width = 50;
+            // 
             // ImportDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -350,11 +359,6 @@ namespace TocoMilkTeaShop.Forms
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lbNote;
         private System.Windows.Forms.DataGridView dgv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaterialName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quatity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
-        private System.Windows.Forms.DataGridViewButtonColumn DeleteThis;
         private System.Windows.Forms.TextBox tbMaterialName;
         private System.Windows.Forms.TextBox tbQuatity;
         private System.Windows.Forms.TextBox tbPrice;
@@ -362,5 +366,11 @@ namespace TocoMilkTeaShop.Forms
         private System.Windows.Forms.Button btCloseTB;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbbMaterialName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaterialName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quatity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Unit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.DataGridViewButtonColumn DeleteThis;
     }
 }

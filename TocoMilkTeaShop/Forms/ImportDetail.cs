@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -59,6 +60,7 @@ namespace TocoMilkTeaShop.Forms
                  {
                      MaterialName = mat.MaterialName,
                      Quatity = imdb.Quatity,
+                     Unit = mat.Unit,
                      Price = imdb.Price,
                      Total = imdb.Quatity * imdb.Price
                  }).ToList();
@@ -69,24 +71,55 @@ namespace TocoMilkTeaShop.Forms
             if (cbbMaterialName.Visible == false) VisibleTextbox(true);
             else
             {
-                int matID = db.Materials.FirstOrDefault(mat => mat.MaterialName == cbbMaterialName.Text).MaterialID;
-                if(matID == null)
+                bool checkExists = db.Materials.Where(mat => mat.MaterialName == cbbMaterialName.Text).Any();
+                if (!checkExists)
                 {
-                    MessageBox.Show("Tên nguyên liệu không tồn tại ! Bạn cần thêm vào danh sách nguyên liệu ?", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Question);
-                    return;
+                    //MessageBox.Show("Tên nguyên liệu không tồn tại ! Bạn cần thêm vào danh sách nguyên liệu ?", "Lỗi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    //return;
+                    DialogResult dR = MessageBox.Show("Tên nguyên liệu không tồn tại ! Bạn có muốn thêm vào danh sách nguyên liệu ?", "Thông báo", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+                    if (dR == DialogResult.Yes)
+                    {
+                        object unitValue;
+                        //
+                        unitValue = Interaction.InputBox("Nhập đơn vị tính cho nguyên liệu vừa thêm !", "Nhập", "--nhập tại đây---");
+                        if (string.IsNullOrEmpty(unitValue.ToString().Trim()))
+                            MessageBox.Show("Bạn chưa nhập !!!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        else
+                        {
+                            Material material = new Material()
+                            {
+                                MaterialName = cbbMaterialName.Text,
+                                Unit = unitValue.ToString()
+                            };
+                            db.Materials.Add(material);
+                            db.SaveChanges();
+                            //
+                            AddMaterialInImportDetailBill(cbbMaterialName.Text);
+                            DisplayImportDetailBill();
+                        }
+                    }
                 }
-                //
-                ImportDetailBill imDB = new ImportDetailBill()
+                else
                 {
-                    ImportID = Convert.ToInt32(lbImportBillID.Text),
-                    MaterialID = matID,
-                    Quatity = Convert.ToInt32(tbQuatity.Text),
-                    Price = Convert.ToInt32(tbPrice.Text)
-                };
-                db.ImportDetailBills.Add(imDB);
-                db.SaveChanges();
-                DisplayImportDetailBill();
+                    AddMaterialInImportDetailBill(cbbMaterialName.Text);
+                    DisplayImportDetailBill();
+                }
             }
+        }
+
+        private void AddMaterialInImportDetailBill(string materialName)
+        {
+            int matID = db.Materials.FirstOrDefault(mat => mat.MaterialName == cbbMaterialName.Text).MaterialID;
+            //
+            ImportDetailBill imDB = new ImportDetailBill()
+            {
+                ImportID = Convert.ToInt32(lbImportBillID.Text),
+                MaterialID = matID,
+                Quatity = Convert.ToInt32(tbQuatity.Text),
+                Price = Convert.ToInt32(tbPrice.Text)
+            };
+            db.ImportDetailBills.Add(imDB);
+            db.SaveChanges();
         }
 
         private void VisibleTextbox(bool isvisible)

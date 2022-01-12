@@ -24,6 +24,7 @@ namespace TocoMilkTeaShop.Tabs
         private void UCProduct_Load(object sender, EventArgs e)
         {
             DisplayProduct();
+            panel.Visible = false;
         }
 
         private void DisplayProduct()
@@ -117,6 +118,21 @@ namespace TocoMilkTeaShop.Tabs
                 db.SaveChanges();
                 DisplayProduct();
                 }
+            }
+        }
+        private void btEdit_Click_1(object sender, EventArgs e)
+        {
+            if(panel.Visible == false)
+            {
+                panel.Visible = true;
+                tbProductName.Clear();
+                tbPrice.Clear();
+                dgv.Location = new Point(135, 108);
+            }
+            else
+            {
+                panel.Visible = false;
+                dgv.Location = new Point(135, 30);
             }
         }
     }

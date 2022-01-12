@@ -202,7 +202,7 @@ namespace TocoMilkTeaShop.Forms
             this.dgv.RowHeadersVisible = false;
             this.dgv.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgv.Size = new System.Drawing.Size(875, 403);
-            this.dgv.TabIndex = 1;
+            this.dgv.TabIndex = 5;
             this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
             // 
             // tbMaterialName
@@ -217,7 +217,7 @@ namespace TocoMilkTeaShop.Forms
             this.tbQuatity.Location = new System.Drawing.Point(423, 143);
             this.tbQuatity.Name = "tbQuatity";
             this.tbQuatity.Size = new System.Drawing.Size(95, 24);
-            this.tbQuatity.TabIndex = 2;
+            this.tbQuatity.TabIndex = 1;
             // 
             // tbPrice
             // 
@@ -266,7 +266,7 @@ namespace TocoMilkTeaShop.Forms
             this.cbbMaterialName.Location = new System.Drawing.Point(54, 143);
             this.cbbMaterialName.Name = "cbbMaterialName";
             this.cbbMaterialName.Size = new System.Drawing.Size(363, 27);
-            this.cbbMaterialName.TabIndex = 5;
+            this.cbbMaterialName.TabIndex = 0;
             // 
             // MaterialName
             // 
@@ -284,6 +284,7 @@ namespace TocoMilkTeaShop.Forms
             // 
             // Unit
             // 
+            this.Unit.DataPropertyName = "Unit";
             this.Unit.HeaderText = "Đơn vị";
             this.Unit.Name = "Unit";
             this.Unit.Width = 80;

@@ -109,8 +109,11 @@ namespace TocoMilkTeaShop.Forms
 
         private void AddMaterialInImportDetailBill(string materialName)
         {
+            
+            //
             int matID = db.Materials.FirstOrDefault(mat => mat.MaterialName == cbbMaterialName.Text).MaterialID;
             //
+            if(db.ImportDetailBills.
             ImportDetailBill imDB = new ImportDetailBill()
             {
                 ImportID = Convert.ToInt32(lbImportBillID.Text),

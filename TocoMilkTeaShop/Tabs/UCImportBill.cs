@@ -121,9 +121,10 @@ namespace TocoMilkTeaShop.Tabs
             ImportBill imB = db.ImportBills.FirstOrDefault(iB => iB.ImportID == imiD);
             imB.Time = dtp.Value;
             imB.CompanyName = tbCompanyName.Text;
-            imB.ShiperName = tbCompanyName.Text;
+            imB.ShiperName = tbShiperName.Text;
             imB.Note = tbNote.Text;
             db.SaveChanges();
+            DislayImportBill();
         }
 
         private void btRemove_Click(object sender, EventArgs e)

@@ -333,9 +333,9 @@ namespace TocoMilkTeaShop.Tabs
             // 
             this.btRemove.BackgroundImage = global::TocoMilkTeaShop.Properties.Resources.deleteicon;
             this.btRemove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btRemove.Location = new System.Drawing.Point(1326, 104);
+            this.btRemove.Location = new System.Drawing.Point(1326, 124);
             this.btRemove.Name = "btRemove";
-            this.btRemove.Size = new System.Drawing.Size(35, 33);
+            this.btRemove.Size = new System.Drawing.Size(48, 41);
             this.btRemove.TabIndex = 3;
             this.btRemove.UseVisualStyleBackColor = true;
             this.btRemove.Click += new System.EventHandler(this.btRemove_Click);
@@ -344,9 +344,9 @@ namespace TocoMilkTeaShop.Tabs
             // 
             this.btUpdate.BackgroundImage = global::TocoMilkTeaShop.Properties.Resources.save_icon;
             this.btUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btUpdate.Location = new System.Drawing.Point(1326, 68);
+            this.btUpdate.Location = new System.Drawing.Point(1326, 76);
             this.btUpdate.Name = "btUpdate";
-            this.btUpdate.Size = new System.Drawing.Size(33, 30);
+            this.btUpdate.Size = new System.Drawing.Size(48, 42);
             this.btUpdate.TabIndex = 3;
             this.btUpdate.UseVisualStyleBackColor = true;
             this.btUpdate.Click += new System.EventHandler(this.btUpdate_Click);
@@ -356,9 +356,9 @@ namespace TocoMilkTeaShop.Tabs
             this.btAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btAdd.BackgroundImage = global::TocoMilkTeaShop.Properties.Resources.add_icon;
             this.btAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btAdd.Location = new System.Drawing.Point(1326, 32);
+            this.btAdd.Location = new System.Drawing.Point(1326, 23);
             this.btAdd.Name = "btAdd";
-            this.btAdd.Size = new System.Drawing.Size(33, 30);
+            this.btAdd.Size = new System.Drawing.Size(48, 47);
             this.btAdd.TabIndex = 3;
             this.btAdd.UseVisualStyleBackColor = false;
             this.btAdd.Click += new System.EventHandler(this.btAdd_Click);

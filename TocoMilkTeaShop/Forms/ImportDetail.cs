@@ -109,11 +109,20 @@ namespace TocoMilkTeaShop.Forms
 
         private void AddMaterialInImportDetailBill(string materialName)
         {
-            
+            if (!int.TryParse(tbPrice.Text, out int Num) || !int.TryParse(tbQuatity.Text, out Num))
+            {
+                MessageBox.Show("Lỗi nhập dữ liệu", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
+            }
+
             //
             int matID = db.Materials.FirstOrDefault(mat => mat.MaterialName == cbbMaterialName.Text).MaterialID;
             //
-            if(db.ImportDetailBills.
+            if(db.ImportDetailBills.Any(imx=>imx.MaterialID == matID))
+            {
+                MessageBox.Show("Tên hàng đã có sẵn trong hóa đơn !", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             ImportDetailBill imDB = new ImportDetailBill()
             {
                 ImportID = Convert.ToInt32(lbImportBillID.Text),
@@ -134,6 +143,7 @@ namespace TocoMilkTeaShop.Forms
 
         private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex == 0) return;
             var senderGrid = (DataGridView)sender;
             int importBillID = Convert.ToInt32(lbImportBillID.Text);
             var matName = senderGrid.Rows[e.RowIndex].Cells[1].Value.ToString();

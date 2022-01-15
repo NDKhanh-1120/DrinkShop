@@ -111,7 +111,10 @@ namespace TocoMilkTeaShop
         }
         private void tbCustomerGiving_TextChanged(object sender, EventArgs e)
         {
-            try { lbGiveBack.Text = ( Convert.ToInt32(tbCustomerGiving.Text) - Convert.ToInt32(lbTotal.Text)).ToString(); }
+            try {
+                lbGiveBack.Text = (Convert.ToInt32(lbTotal.Text) - Convert.ToInt32(tbCustomerGiving.Text) 
+                                ).ToString();
+                }
             catch (Exception ex) { return; }
         }
         private void btClearTB_Click(object sender, EventArgs e)
@@ -227,8 +230,8 @@ namespace TocoMilkTeaShop
             {
                 total += Convert.ToDouble(dgvOrder.Rows[i].Cells[4].Value);
             }
-            CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
-            lbTotal.Text = double.Parse(total.ToString()).ToString("#,###", cul.NumberFormat) + "VNĐ";
+
+            lbTotal.Text = total.ToString();
         }
         private void ClearOrders()
         {

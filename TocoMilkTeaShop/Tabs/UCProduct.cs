@@ -34,7 +34,13 @@ namespace TocoMilkTeaShop.Tabs
 
         private void btAdd_Click(object sender, EventArgs e)
         {
-            TocoMilkTeaShop.Models.Menu product = new TocoMilkTeaShop.Models.Menu()
+            
+            if (!int.TryParse(tbPrice.Text, out int Num))
+            {
+                MessageBox.Show("Lỗi nhập dữ liệu", "Lỗi",MessageBoxButtons.OK,MessageBoxIcon.Stop);
+                return;
+            }
+                TocoMilkTeaShop.Models.Menu product = new TocoMilkTeaShop.Models.Menu()
             {
                 ProductName = tbProductName.Text,
                 Price = Convert.ToInt32(tbPrice.Text),
@@ -47,6 +53,11 @@ namespace TocoMilkTeaShop.Tabs
 
         private void btUpdate_Click(object sender, EventArgs e)
         {
+            if (!int.TryParse(tbPrice.Text, out int Num))
+            {
+                MessageBox.Show("Lỗi nhập dữ liệu", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
+            }
 
             selectedProduct.ProductName = tbProductName.Text;
             selectedProduct.Price = Convert.ToInt32(tbPrice.Text);
